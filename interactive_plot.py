@@ -345,16 +345,19 @@ def build_app(app):
     return app
 
 
-server = flask.Flask(__name__)
+# server = flask.Flask(__name__)
+#
+#
+# @server.route("/")
+# def home():
+#     return "Flask App"
 
 
-@server.route("/")
-def home():
-    return "Flask App"
-
-
-app = dash.Dash(external_stylesheets=[dbc.themes.CERULEAN], server=server, routes_pathname_prefix="/interactive/")
+app = dash.Dash(external_stylesheets=[dbc.themes.CERULEAN])
+# app = dash.Dash(external_stylesheets=[dbc.themes.CERULEAN], server=server, routes_pathname_prefix="/interactive/")
+server = app.server
 app = build_app(app)
 
+
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
