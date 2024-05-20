@@ -256,7 +256,7 @@ def build_app(app):
     app.layout = dbc.Container([
         html.Br(),
         dbc.Row(
-            html.H1('Interactive Optimality Plot')
+            html.H1('Interactive GUI')
         ),
         html.Br(),
         dbc.Row(
